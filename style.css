@@ -1,0 +1,39 @@
+/*#goblin{
+  display: block;
+  margin: 0 auto;
+}*/
+
+#whole-shabang{
+  display: block;
+  margin: 0 auto;
+  width: 80%;
+  background-image: url(DAGoblin_2948897k.jpg);
+  background-size: cover;
+  height: 500px;
+}
+#input{
+/*  float: left;*/
+  width: 400px;
+  height: 30px;
+}
+
+#log{
+/*  float: left;*/
+  background-color: white;
+  opacity:0.7;
+  padding-right: 5px;
+}
+
+#chatroom{
+  float: left;
+}
+.command{
+  font-style: bold;  
+}
+.action{
+  font-style: italic;
+  list-style: none;
+}
+.response{
+  list-style: none;  
+}
