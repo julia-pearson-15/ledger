@@ -30,6 +30,7 @@ $(document).ready(function() {
     return makeString(addingI);
   }
 
+
   var respond = function(question){
     var answer  = '';
     var newList = $('<li>');    
@@ -43,12 +44,30 @@ $(document).ready(function() {
       purseBal-=questions[2];
       ledgerList +=questions[1]+' owes me '+questions[2]+' ducats, ';
     }else if(questions[0]==='ledger'){
+      newList.addClass('response');
       answer = ledgerList;
       console.log(ledgerList);
     }else if(questions[0]==='collect' && questions[1]==='interest'){
+      newList.addClass('response');
       answer = getInterest();
+      //ledgerList = answer;
     }else if(questions[0]==='set'){
-      interestRate=questions[4];
+      var oldInt = interestRate;
+      interestRate=(.01*parseInt(questions[3]));
+      newList.addClass('action');
+      answer='Shylock adjusts his interest rate from '+oldInt+'% to '+interestRate+'%';
+    }else{
+      purseBal+=questions[1];
+      newList.addClass('action');
+      answer='Shylock opens his purse';
+      var adjustDebt = function(){
+        for (var i = 0 ; i < ledgerList.length; i++) {
+          if (ledgerList[i]===questions[4]){
+            ledgerList[i+3];
+          }
+        };
+      };
+      adjustDebt();
     }
     newList.text(answer);
     $logList.append(newList);
